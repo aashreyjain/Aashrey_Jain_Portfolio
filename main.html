@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aashrey Jain - Data Analyst Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        /* Navigation */
+        nav {
+            background: #1e3a8a;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav h1 {
+            font-size: 1.5rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #93c5fd;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.85;
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .contact-links a:hover {
+            background: white;
+            color: #1e3a8a;
+        }
+        
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1e3a8a;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .skill-category h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .skill-category p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* Experience */
+        .experience-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #3b82f6;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .experience-header h3 {
+            color: #1e3a8a;
+            font-size: 1.4rem;
+        }
+        
+        .experience-header .date {
+            color: #666;
+            font-weight: 600;
+        }
+        
+        .role {
+            font-style: italic;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .experience-item li {
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            position: relative;
+        }
+        
+        .experience-item li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .project-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .project-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .project-card li {
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            position: relative;
+            color: #555;
+        }
+        
+        .project-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        
+        .education-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .education-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-card .degree {
+            color: #3b82f6;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-card .gpa {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .projects-grid,
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>Aashrey Jain</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h2>Aashrey Jain</h2>
+        <p class="subtitle">Data Analyst | Data Scientist</p>
+        <p>Masters student at Boston University specializing in Data Science with expertise in SQL, Python, Power BI, and Tableau. Passionate about transforming complex data into actionable insights that drive business decisions.</p>
+        <div class="contact-links">
+            <a href="mailto:jainaashreyjain@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/aashrey-jain-ds/" target="_blank">LinkedIn</a>
+            <a href="tel:+18576059086">+1 (857) 605-9086</a>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                I'm a Data Science graduate student at Boston University with over 2+ years of professional experience in healthcare analytics and data engineering. My passion lies in leveraging data to solve complex business problems and create meaningful impact. I specialize in building scalable data pipelines, designing interactive dashboards, and developing machine learning models. Currently seeking Data Analyst and Data Science opportunities where I can apply my technical skills and analytical mindset to drive data-driven decision making.
+            </p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <h3>Boston University Faculty of Computing and Data Science</h3>
+                    <p class="role">Teaching Fellow | Boston, MA, USA</p>
+                </div>
+                <span class="date">Sep 2025 - Nov 2025</span>
+            </div>
+            <ul>
+                <li>Facilitated lab tutorials and guided 100+ students in mastering data pipelines, ETL processes, and distributed data processing with SQL, NoSQL, and MapReduce.</li>
+                <li>Diagnosed student issues in SQL, Python, and MapReduce labs by analyzing root causes, reproducing errors, and guiding users through configuration fixes. Collaborated with faculty to refine instructional materials, ensuring clarity, accuracy, and standardization across multiple lab sections.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <h3>Artha IT</h3>
+                    <p class="role">Data Science Intern | Chantilly, VA, USA</p>
+                </div>
+                <span class="date">Jul 2025 - Aug 2025</span>
+            </div>
+            <ul>
+                <li>Collected and validated large agriculture datasets from field surveys, sensor inputs, and client submissions, ensuring accuracy and completeness for downstream analytics on crop performance and farmer records.</li>
+                <li>Designed Power BI dashboards with advanced DAX expressions to visualize patterns at village, block, and district levels, enabling data-driven decisions for agricultural planning and resource allocation.</li>
+                <li>Performed comprehensive data cleaning, transformation, and preprocessing using Python and pandas, preparing high-quality datasets for modeling, reporting, and geo-level analysis.</li>
+                <li>Built automated ETL workflows to integrate multi-source agricultural data into structured analytical tables, improving refresh reliability and reducing manual data preparation effort.</li>
+                <li>Developed Python automation to streamline recurring reporting tasks and dashboard data updates, enhancing scalability and reducing turnaround time for analytics deliverables.</li>
+                <li>Collaborated with field officers, agronomists, and data teams to validate field-level observations, improve data collection standards, and align analytical outputs with operational needs.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <h3>EXL Services (Healthcare Analytics)</h3>
+                    <p class="role">Business Analyst | Reporting Analyst | Greater Noida, India</p>
+                </div>
+                <span class="date">Jun 2022 - Jul 2024</span>
+            </div>
+            <ul>
+                <li>Built scalable SQL pipelines to process complex healthcare datasets such as claims, enrollment, and provider files, improving data accuracy and consistency across multiple client accounts.</li>
+                <li>Designed and automated Tableau dashboards to surface clinical KPIs, utilization trends, and operational insights, significantly reducing manual reporting cycles and improving stakeholder visibility.</li>
+                <li>Developed Python automation scripts for data validation, anomaly detection, and reconciliation, reducing repetitive QA workload and improving early identification of data discrepancies.</li>
+                <li>Developed reusable SQL template logic for recurring KPI and cohort-based analyses, reducing report development time for repeated analytical queries.</li>
+                <li>Converted stakeholder requirements and business rules into precise analytical logic and SQL data models, improving reporting consistency and reducing back-and-forth clarification efforts.</li>
+                <li>Conducted thorough data-quality checks—including schema audits, field-level validations, integrity checks, and alignment with payer/CMS specifications—resulting in more reliable and compliant healthcare reporting.</li>
+                <li>Performed deep-dive SQL analyses to investigate KPI deviations and data anomalies, enabling faster detection of upstream ingestion issues and improving reporting reliability.</li>
+                <li>Partnered with analytics, QA, and client-facing teams to unify metric definitions, streamline reporting processes, and establish standardized documentation across healthcare workflows.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Data Analytics & ML</h3>
+                <p>Data Analytics, Data Integration, Data Warehouse, Data Governance, Data Reporting, Data Modeling, Data Visualization, Data Analysis, Data Mining, A/B Testing, ETL Processes, Statistical Modeling, Machine Learning, Deep Learning, AI</p>
+            </div>
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <p>Python (Numpy, Pandas, Matplotlib, Sklearn, BeautifulSoup), SQL, R, GitHub, SDLC</p>
+            </div>
+            <div class="skill-category">
+                <h3>BI & Reporting Tools</h3>
+                <p>Microsoft Power BI (DAX, Power Query, PowerPivot), Tableau, Alteryx, Looker Studio, Power Platform, Snowflake, Data Visualization Tools</p>
+            </div>
+            <div class="skill-category">
+                <h3>Cloud & Database</h3>
+                <p>Microsoft Azure, AWS, Databricks, SQL Databases</p>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Productivity</h3>
+                <p>MS Excel, MS PowerPoint, Git, SharePoint</p>
+            </div>
+            <div class="skill-category">
+                <h3>Methodologies</h3>
+                <p>Agile Methodologies, Project Management, Data Engineering Best Practices</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Boston Children's Hospital Data Science Project</h3>
+                <p class="project-date">September 2024 | BU Spark</p>
+                <ul>
+                    <li>Recognized as 1st-place project at BU Spark's Demo Day for analyzing Massachusetts Medicaid and healthcare spending disparities</li>
+                    <li>Identified gaps in pediatric care investment using Looker Studio visualizations</li>
+                    <li>Delivered insights supporting advocacy for equitable resource allocation</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>MassMutual Spring Break Project</h3>
+                <p class="project-date">April 2025 | BU Spark</p>
+                <ul>
+                    <li>Designed tier-based housing transfer fee model for Brighton-Allston neighborhoods</li>
+                    <li>Analyzed historical real-estate transactions using data analytics</li>
+                    <li>Projected $10M in additional revenue for affordable housing initiatives</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>Crypto Market Trends & Sentiment Analysis</h3>
+                <p class="project-date">December 2024</p>
+                <ul>
+                    <li>Built end-to-end pipelines integrating market price data with social sentiment from Reddit, Twitter, and news sources</li>
+                    <li>Developed sentiment scoring models using Azure and anomaly detection with Databricks</li>
+                    <li>Created Power BI dashboards to identify market-moving events</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>Plant Disease Detection App</h3>
+                <p class="project-date">December 2024</p>
+                <ul>
+                    <li>Trained TensorFlow/Keras CNN model on 54,000+ Plant Village images achieving 91% accuracy</li>
+                    <li>Deployed via Streamlit for real-time disease detection</li>
+                    <li>Improved accessibility for farmers and agricultural teams</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <h3>Boston University</h3>
+                <p class="degree">Master of Science, Data Science</p>
+                <p>September 2024 - December 2025</p>
+                <p class="gpa">GPA: 3.15/4.0</p>
+            </div>
+            <div class="education-card">
+                <h3>Chitkara University Institute of Engineering and Technology</h3>
+                <p class="degree">Bachelor of Engineering, Computer Science</p>
+                <p>August 2018 - May 2022</p>
+                <p class="gpa">GPA: 3.75/4.0</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Aashrey Jain. All rights reserved.</p>
+        <p>Boston, MA | <a href="mailto:jainaashreyjain@gmail.com" style="color: white;">jainaashreyjain@gmail.com</a></p>
+    </footer>
+</body>
+</html>

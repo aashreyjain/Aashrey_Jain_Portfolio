@@ -217,11 +217,30 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+            position: relative;
         }
         
         .project-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        /* Featured Project Styling */
+        .featured-project {
+            border: 3px solid #3b82f6;
+            background: linear-gradient(to bottom, #eff6ff 0%, white 100%);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #3b82f6;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
         
         .project-card h3 {
@@ -234,6 +253,7 @@
             color: #666;
             font-size: 0.9rem;
             margin-bottom: 1rem;
+            font-weight: 600;
         }
         
         .project-card ul {
@@ -253,6 +273,30 @@
             left: 0;
             color: #3b82f6;
             font-weight: bold;
+        }
+        
+        .project-links {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .project-link {
+            display: inline-block;
+            color: #1e3a8a;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border: 2px solid #3b82f6;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .project-link:hover {
+            background: #3b82f6;
+            color: white;
+            transform: translateX(5px);
         }
         
         /* Education */
@@ -332,7 +376,7 @@
     <div class="hero">
         <h2>Aashrey Jain</h2>
         <p class="subtitle">Data Analyst | Data Scientist</p>
-        <p>Masters student at Boston University specializing in Data Science with expertise in SQL, Python, Power BI, and Tableau. Passionate about transforming complex data into actionable insights that drive business decisions.</p>
+        <p>Masters student at Boston University with 2+ years of professional experience in data analytics and engineering. Expertise in SQL, Python, Power BI, and Tableau. Passionate about transforming complex data into actionable insights that drive business decisions.</p>
         <div class="contact-links">
             <a href="mailto:jainaashreyjain@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/aashrey-jain-ds/" target="_blank">LinkedIn</a>
@@ -344,7 +388,7 @@
         <h2>About Me</h2>
         <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
             <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
-                I'm a Data Science graduate student at Boston University with over 2+ years of professional experience in healthcare analytics and data engineering. My passion lies in leveraging data to solve complex business problems and create meaningful impact. I specialize in building scalable data pipelines, designing interactive dashboards, and developing machine learning models. Currently seeking Data Analyst and Data Science opportunities where I can apply my technical skills and analytical mindset to drive data-driven decision making.
+                I'm a Data Science graduate student at Boston University with 2+ years of professional experience in healthcare analytics and data engineering. My passion lies in leveraging data to solve complex business problems and create meaningful impact. I specialize in building scalable data pipelines, designing interactive dashboards, and developing machine learning models. Currently seeking Data Analyst and Data Science opportunities where I can apply my technical skills and analytical mindset to drive data-driven decision making.
             </p>
         </div>
     </section>
@@ -361,9 +405,8 @@
                 <span class="date">Sep 2025 - Nov 2025</span>
             </div>
             <ul>
-                <li>Delivered lectures and led weekly sessions for undergraduate students on SQL, Python, and MapReduce, simplifying complex concepts and demonstrating real-world data processing workflows.</li>
-                <li>Held twice-weekly 1-on-1 office hours (3 hours/week), assisting 100+ students with debugging and improving SQL queries and Python scripts, while reinforcing data transformation concepts and best practices.</li>
-                <li>Designed and graded 5+ assignments that helped students apply data engineering concepts like extraction, schema design, and distributed computation in real-world coding scenarios.</li>
+                <li>Facilitated lab tutorials and guided 100+ students in mastering data pipelines, ETL processes, and distributed data processing with SQL, NoSQL, and MapReduce.</li>
+                <li>Diagnosed student issues in SQL, Python, and MapReduce labs by analyzing root causes, reproducing errors, and guiding users through configuration fixes. Collaborated with faculty to refine instructional materials, ensuring clarity, accuracy, and standardization across multiple lab sections.</li>
             </ul>
         </div>
 
@@ -377,10 +420,10 @@
             </div>
             <ul>
                 <li>Collected and validated large agriculture datasets from field surveys, sensor inputs, and client submissions, ensuring accuracy and completeness for downstream analytics on crop performance and farmer records.</li>
-                <li>Engineered 8+ multi-level Power BI dashboards used by public sector teams for district-level agricultural planning, combining automated reporting pipelines and advanced visualizations (line charts, maps, KPI cards) to drive regional decision-making.</li>
+                <li>Designed Power BI dashboards with advanced DAX expressions to visualize patterns at village, block, and district levels, enabling data-driven decisions for agricultural planning and resource allocation.</li>
                 <li>Performed comprehensive data cleaning, transformation, and preprocessing using Python and pandas, preparing high-quality datasets for modeling, reporting, and geo-level analysis.</li>
-                <li>Built automated ETL workflows to integrate multi-source agricultural data into structured analytical tables, improving refresh reliability and reducing manual data preparation effort across recurring analytics workflows.</li>
-                <li>Developed Python automation to streamline recurring reporting tasks and dashboard data updates on daily, weekly, and monthly schedules, reducing manual effort, quantified impact, and improving overall efficiency across recurring analytics cycles.</li>
+                <li>Built automated ETL workflows to integrate multi-source agricultural data into structured analytical tables, improving refresh reliability and reducing manual data preparation effort.</li>
+                <li>Developed Python automation to streamline recurring reporting tasks and dashboard data updates, enhancing scalability and reducing turnaround time for analytics deliverables.</li>
                 <li>Collaborated with field officers, agronomists, and data teams to validate field-level observations, improve data collection standards, and align analytical outputs with operational needs.</li>
             </ul>
         </div>
@@ -394,7 +437,7 @@
                 <span class="date">Jun 2022 - Jul 2024</span>
             </div>
             <ul>
-                <li>Developed automated SQL-based data pipelines to standardize claims, enrollment, and provider data across 4+ healthcare clients, improving data consistency and reducing reporting errors by 30%.</li>
+                <li>Built scalable SQL pipelines to process complex healthcare datasets such as claims, enrollment, and provider files, improving data accuracy and consistency across multiple client accounts.</li>
                 <li>Designed and automated Tableau dashboards to surface clinical KPIs, utilization trends, and operational insights, significantly reducing manual reporting cycles and improving stakeholder visibility.</li>
                 <li>Developed Python automation scripts for data validation, anomaly detection, and reconciliation, reducing repetitive QA workload and improving early identification of data discrepancies.</li>
                 <li>Developed reusable SQL template logic for recurring KPI and cohort-based analyses, reducing report development time for repeated analytical queries.</li>
@@ -437,28 +480,48 @@
     </section>
 
     <section id="projects">
-        <h2>Featured Projects</h2>
+        <h2>Projects</h2>
+        
+        <!-- Featured Projects -->
+        <h3 style="color: #1e3a8a; font-size: 1.8rem; margin-bottom: 1.5rem; margin-top: 1rem;">🏆 Featured Projects with Achievements</h3>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card featured-project">
+                <div class="featured-badge">Featured</div>
                 <h3>Boston Children's Hospital Data Science Project</h3>
-                <p class="project-date">September 2024 | BU Spark</p>
+                <p class="project-date">September 2024 | BU Spark | 🥇 1st Place Winner</p>
                 <ul>
                     <li>Recognized as 1st-place project at BU Spark's Demo Day for analyzing Massachusetts Medicaid and healthcare spending disparities</li>
                     <li>Identified gaps in pediatric care investment using Looker Studio visualizations</li>
                     <li>Delivered insights supporting advocacy for equitable resource allocation</li>
                 </ul>
+                <div class="project-links">
+                    <a href="https://www.bu.edu/spark/2024/12/17/demo-day-fall-2024-highlights-solutions-in-accessibility-ai-sustainability-and-more/" target="_blank" class="project-link">
+                        🔗 View Project Feature on BU Website
+                    </a>
+                </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card featured-project">
+                <div class="featured-badge">Featured</div>
                 <h3>MassMutual Spring Break Project</h3>
-                <p class="project-date">April 2025 | BU Spark</p>
+                <p class="project-date">April 2025 | BU Spark | Selected from 23 Students</p>
                 <ul>
+                    <li>Selected among 23 students to work on client project at MassMutual</li>
                     <li>Designed tier-based housing transfer fee model for Brighton-Allston neighborhoods</li>
                     <li>Analyzed historical real-estate transactions using data analytics</li>
                     <li>Projected $10M in additional revenue for affordable housing initiatives</li>
                 </ul>
+                <div class="project-links">
+                    <a href="https://www.instagram.com/reel/DHwhd2VPf2I/?igsh=MWw0YTg4dmtzNHJlOA%3D%3D" target="_blank" class="project-link">
+                        📸 View Project Highlight on Instagram
+                    </a>
+                </div>
             </div>
+        </div>
 
+        <!-- Other Projects -->
+        <h3 style="color: #1e3a8a; font-size: 1.8rem; margin-bottom: 1.5rem; margin-top: 3rem;">💡 Other Projects</h3>
+        <div class="projects-grid">
             <div class="project-card">
                 <h3>Crypto Market Trends & Sentiment Analysis</h3>
                 <p class="project-date">December 2024</p>
@@ -488,13 +551,11 @@
                 <h3>Boston University</h3>
                 <p class="degree">Master of Science, Data Science</p>
                 <p>September 2024 - December 2025</p>
-                <p class="gpa">GPA: 3.15/4.0</p>
             </div>
             <div class="education-card">
                 <h3>Chitkara University Institute of Engineering and Technology</h3>
                 <p class="degree">Bachelor of Engineering, Computer Science</p>
                 <p>August 2018 - May 2022</p>
-                <p class="gpa">GPA: 3.75/4.0</p>
             </div>
         </div>
     </section>
@@ -505,5 +566,3 @@
     </footer>
 </body>
 </html>
-
-

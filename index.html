@@ -299,6 +299,81 @@
             transform: translateX(5px);
         }
         
+        /* Publications */
+        .publication-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #10b981;
+            transition: transform 0.3s;
+        }
+        
+        .publication-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .publication-header {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .publication-icon {
+            font-size: 2rem;
+            color: #10b981;
+        }
+        
+        .publication-item h3 {
+            color: #1e3a8a;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .publication-meta {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .publication-authors {
+            color: #555;
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .publication-btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-download {
+            background: #10b981;
+            color: white;
+            border: 2px solid #10b981;
+        }
+        
+        .btn-download:hover {
+            background: #059669;
+            border-color: #059669;
+            transform: translateY(-2px);
+        }
+        
         /* Education */
         .education-grid {
             display: grid;
@@ -368,6 +443,7 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
                 <li><a href="#education">Education</a></li>
             </ul>
         </div>
@@ -458,11 +534,11 @@
             </div>
             <div class="skill-category">
                 <h3>Programming Languages</h3>
-                <p>Python (Numpy, Pandas, Matplotlib, Sklearn, BeautifulSoup), SQL, R, GitHub</p>
+                <p>Python (Numpy, Pandas, Matplotlib, Sklearn, BeautifulSoup), SQL, R, GitHub, SDLC</p>
             </div>
             <div class="skill-category">
                 <h3>BI & Reporting Tools</h3>
-                <p>Microsoft Power BI (DAX, Power Query, PowerPivot), Tableau Looker Studio, Snowflake</p>
+                <p>Microsoft Power BI (DAX, Power Query, PowerPivot), Tableau, Alteryx, Looker Studio, Power Platform, Snowflake, Data Visualization Tools</p>
             </div>
             <div class="skill-category">
                 <h3>Cloud & Database</h3>
@@ -474,7 +550,7 @@
             </div>
             <div class="skill-category">
                 <h3>Methodologies</h3>
-                <p>Agile Methodologies, Project Management</p>
+                <p>Agile Methodologies, Project Management, Data Engineering Best Practices</p>
             </div>
         </div>
     </section>
@@ -490,10 +566,9 @@
                 <h3>Boston Children's Hospital Data Science Project</h3>
                 <p class="project-date">September 2024 | BU Spark | 🥇 1st Place Winner</p>
                 <ul>
-                    <li>Recognized as 1st-place project at BU Spark's Demo Day for analyzing Massachusetts Medicaid and healthcare spending disparities.</li>
-                    <li>Analyzed Massachusetts Medicaid (MassHealth) and pediatric healthcare spending using SQL and demographic data to uncover underinvestment in children’s services.</li>
-                    <li>Built interactive dashboards in Looker Studio to compare state spending vs national benchmarks and similar states, enablingequity-focused funding recommendations.</li>
-                    <li> Identified gaps in social determinants of health, helping BCH’s Office of Government Relations advocate for improved pediatric health policies.</li>
+                    <li>Recognized as 1st-place project at BU Spark's Demo Day for analyzing Massachusetts Medicaid and healthcare spending disparities</li>
+                    <li>Identified gaps in pediatric care investment using Looker Studio visualizations</li>
+                    <li>Delivered insights supporting advocacy for equitable resource allocation</li>
                 </ul>
                 <div class="project-links">
                     <a href="https://www.bu.edu/spark/2024/12/17/demo-day-fall-2024-highlights-solutions-in-accessibility-ai-sustainability-and-more/" target="_blank" class="project-link">
@@ -508,9 +583,9 @@
                 <p class="project-date">April 2025 | BU Spark | Selected from 23 Students</p>
                 <ul>
                     <li>Selected among 23 students to work on client project at MassMutual</li>
-                    <li>Analyzed real-estate transfer data in Brighton-Allston using SQL and Excel to design a tiered transaction fee model, identifying trends and estimating potential revenue uplift.</li>
-                    <li>Developed interactive dashboards in Looker Studio to help city stakeholders evaluate real-estate activity, affordability metrics, and fee scenarios across property price tiers.</li>
-                    <li>Generated $10M+ revenue projections to support policy development and assess the financial feasibility of affordable housing expansion programs.</li>
+                    <li>Designed tier-based housing transfer fee model for Brighton-Allston neighborhoods</li>
+                    <li>Analyzed historical real-estate transactions using data analytics</li>
+                    <li>Projected $10M in additional revenue for affordable housing initiatives</li>
                 </ul>
                 <div class="project-links">
                     <a href="https://www.instagram.com/reel/DHwhd2VPf2I/?igsh=MWw0YTg4dmtzNHJlOA%3D%3D" target="_blank" class="project-link">
@@ -527,9 +602,9 @@
                 <h3>Crypto Market Trends & Sentiment Analysis</h3>
                 <p class="project-date">December 2024</p>
                 <ul>
-                    <li>Built end-to-end pipelines integrating market price data with social sentiment from Reddit, Twitter, and news sources.</li>
-                    <li>Developed sentiment scoring models using Azure and anomaly detection with Databricks.</li>
-                    <li>Created Power BI dashboards to identify market-moving events.</li>
+                    <li>Built end-to-end pipelines integrating market price data with social sentiment from Reddit, Twitter, and news sources</li>
+                    <li>Developed sentiment scoring models using Azure and anomaly detection with Databricks</li>
+                    <li>Created Power BI dashboards to identify market-moving events</li>
                 </ul>
             </div>
 
@@ -537,10 +612,60 @@
                 <h3>Plant Disease Detection App</h3>
                 <p class="project-date">December 2024</p>
                 <ul>
-                    <li>Trained TensorFlow/Keras CNN model on 54,000+ Plant Village images achieving 91% accuracy.</li>
-                    <li>Deployed via Streamlit for real-time disease detection.</li>
-                    <li>Improved accessibility for farmers and agricultural teams.</li>
+                    <li>Trained TensorFlow/Keras CNN model on 54,000+ Plant Village images achieving 91% accuracy</li>
+                    <li>Deployed via Streamlit for real-time disease detection</li>
+                    <li>Improved accessibility for farmers and agricultural teams</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <h2>📚 Research Publications</h2>
+        
+        <div class="publication-item">
+            <div class="publication-header">
+                <span class="publication-icon">📄</span>
+                <div>
+                    <h3>Mushrooming Trends and Technologies to Aid Visually Impaired People</h3>
+                    <p class="publication-meta">
+                        <strong>IEEE ic-ETITE 2020</strong> | International Conference on Emerging Trends in Information Technology and Engineering
+                    </p>
+                    <p class="publication-authors">
+                        Raghav Goel, <strong>Aashrey Jain</strong>, Megha Bhushan, Ashok Kumar, Kanupriya Verma, Arun Negi
+                    </p>
+                    <p style="color: #555; line-height: 1.6; margin-bottom: 1rem;">
+                        This paper provides comprehensive information on the latest techniques used to assist visually impaired people. It includes detailed descriptions of tools and techniques with summary, merits, demerits, and future challenges to aid researchers in developing more efficient solutions.
+                    </p>
+                    <div class="publication-links">
+                        <a href="PID6333673.pdf" download class="publication-btn btn-download">
+                            📥 Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="publication-item">
+            <div class="publication-header">
+                <span class="publication-icon">📄</span>
+                <div>
+                    <h3>Smart Cities using Internet of Things: Recent Trends and Technologies</h3>
+                    <p class="publication-meta">
+                        <strong>IJITEE 2019</strong> | International Journal of Innovative Technology and Exploring Engineering | Volume-8, Issue-9S
+                    </p>
+                    <p class="publication-authors">
+                        Shagun Sharma, Mamta Nanda, Raghav Goel, <strong>Aashrey Jain</strong>, Megha Bhushan, Ashok Kumar
+                    </p>
+                    <p style="color: #555; line-height: 1.6; margin-bottom: 1rem;">
+                        This paper explores the role of Smart Cities in various domains and depicts IoT technologies with primary components and features. It discusses technologies that benefit citizens by facilitating platform integration and prompt communication, along with merits, demerits, and main challenges.
+                    </p>
+                    <div class="publication-links">
+                        <a href="I10040789S19.pdf" download class="publication-btn btn-download">
+                            📥 Download PDF
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -551,12 +676,14 @@
             <div class="education-card">
                 <h3>Boston University</h3>
                 <p class="degree">Master of Science, Data Science</p>
-                <p>September 2024 - January 2026</p>
+                <p>September 2024 - December 2025</p>
+                <p class="gpa">GPA: 3.20/4.0</p>
             </div>
             <div class="education-card">
                 <h3>Chitkara University Institute of Engineering and Technology</h3>
                 <p class="degree">Bachelor of Engineering, Computer Science</p>
                 <p>August 2018 - May 2022</p>
+                <p class="gpa">GPA: 3.75/4.0</p>
             </div>
         </div>
     </section>
@@ -567,6 +694,3 @@
     </footer>
 </body>
 </html>
-
-
-
